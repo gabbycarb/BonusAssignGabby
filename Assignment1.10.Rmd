@@ -1,0 +1,90 @@
+---
+title: "Assignment 1.10"
+author: "Gabrielle Carbonel"
+date: "09/15/2023"
+output:
+  html_document:
+    df_print: paged
+subtitle: CPSC 292 Section 03 (Hansen
+---
+
+### Collaboration team: 
+
+Record who you've worked on the assignment with here. 
+
+
+## Assignment 1.10 -- Data Frames
+
+```{r setup, include=FALSE}
+# Do not alter this section of code!
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+Write a R code in each chunk (gray space) that provides answers to the following questions. If any questions need direct answers, give them in regular text space (white space).
+
+### Question 1
+
+*Create a data frame that has columns with three different data types.*
+
+```{r}
+data.frame (
+  name = c("Jill", "Jack", "Bob"),
+  Age = c(19, 20, 19),
+  Vote = c(T,F,T))
+```
+
+### Question 2
+
+*Load the data set chickwts, which is study on chick weights based on feed type.*
+
+```{r}
+chickwts
+```
+
+*Use it to answer the following questions:*
+
+  a. *What is the mean weight of all the chicks in the study? How many chicks are in each feed group?*
+  
+```{r}
+mean(chickwts$weight)
+(chickwts$feed)
+
+
+```
+  
+  b. *Create two separate vectors with all the weights of the chicks in the study and all the feeds in the study.*
+  
+```{r}
+x<-(ChickWeight$weight)
+y<-(chickwts$feed)
+print(data)
+print(x)
+print(y)
+```
+  
+  c. *Subset the data frame into a new object that represents only the weights of chicks fed on horsebean.*
+  
+```{r}
+horsebeanchik <- subset(chickwts, feed == "horsebean", chickwts$feed == F)
+print(horsebeanchik)
+
+```
+
+  d. *Repeat this subsetting into a new object for chicks fed on sunflower.*
+  
+```{r}
+sunflowerchik <- subset(chickwts, feed=="sunflower", weight == F)
+print(sunflowerchik)
+```
+
+### Question 4
+
+*The following line of code does not work. Correct the error so that the code returns the mean weight of chicks fed soybean or linseed feed.*
+```{r}
+soybeanlinseedchik <- subset(chickwts, feed == "soybean")
+mean(soybeanlinseedchik$weight)
+```
+I removed the brackets and |.
+
+
+Turn in this RMD file.
